@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
     // tslint:disable-next-line:component-selector
@@ -6,6 +6,6 @@ import { Component } from '@angular/core';
     templateUrl: 'photo.component.html'
 })
 export class PhotoComponent {
-    description = 'Leão';
-    url = 'http://img.dgabc.com.br/Imagens/20161128103649.jpg';
+    @Input() description = '';
+    @Input() url = '';
 }
