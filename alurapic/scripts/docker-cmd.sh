@@ -5,4 +5,4 @@ if [ -z "$1" ]
 	exit 1
 fi
 
-docker run --rm -it --name alura-angular -v "$PWD/alurapic":/usr/app -w /usr/app -p 4200:4200 -p 49153:49153 rfwal:alura-angular $*
+docker run --rm -it --name alura-angular -v "$PWD":/usr/app -w /usr/app -p 4200:4200 -p 49153:49153 rfwal:alura-angular $*
