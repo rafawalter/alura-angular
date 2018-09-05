@@ -6,7 +6,7 @@ import { NgModule } from '@angular/core';
 import { NotFoundComponent } from './errors/not-found/not-found.component';
 
 const routes: Routes = [
-    {path: 'user/flavio', component: PhotoListComponent},
+    {path: 'user/:userName', component: PhotoListComponent},
     {path: 'p/add', component: PhotoFormComponent},
     {path: '**', component: NotFoundComponent}
 ];
