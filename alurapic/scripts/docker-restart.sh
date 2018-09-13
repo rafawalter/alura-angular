@@ -1,0 +1,1 @@
+./scripts/docker-stop.sh && ./scripts/docker-serve.sh

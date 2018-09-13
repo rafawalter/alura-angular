@@ -1,0 +1,1 @@
+docker stop alura-angular
