@@ -15,4 +15,4 @@ RUN npm install -g @angular/cli@6.0.7
 
 # The default port from ng serve (4200)
 # and 49153 for Webpack Hot Module Reload
-EXPOSE 4200 49153
+EXPOSE 4201 49153
