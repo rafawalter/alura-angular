@@ -50,8 +50,7 @@
                 "serve": {
                     "builder": "@angular-devkit/build-angular:dev-server",
                     "options": {
-                        "browserTarget": "alurapic:build",
-                        "port": 4201
+                        "browserTarget": "alurapic:build"
                     },
                     "configurations": {
                         "production": {
