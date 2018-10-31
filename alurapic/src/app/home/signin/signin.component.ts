@@ -17,13 +17,16 @@ export class SignInComponent implements OnInit {
         private authService: AuthService,
         private router: Router,
         private platformDetectorService: PlatformDetectorService
-    ) {}
+    ) { }
 
     ngOnInit(): void {
         this.loginForm = this.formBuilder.group({
             userName: ['', Validators.required],
             password: ['', Validators.required]
         });
+        if (this.platformDetectorService.isPlatformBrowser()) {
+            this.userNameInput.nativeElement.focus();
+        }
     }
 
     login() {
