@@ -1,5 +1,7 @@
+import { PhotoService } from './../photo/photo.service';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   // tslint:disable-next-line:component-selector
@@ -13,7 +15,9 @@ export class PhotoFormComponent implements OnInit {
   file: File;
 
   constructor(
-    private formBuilder: FormBuilder
+    private formBuilder: FormBuilder,
+    private photoService: PhotoService,
+    private router: Router,
   ) { }
 
   ngOnInit() {
@@ -27,9 +31,9 @@ export class PhotoFormComponent implements OnInit {
   upload() {
     const description = this.photoForm.get('description').value;
     const allowComments = this.photoForm.get('allowComments').value;
-    console.log(description);
-    console.log(allowComments);
-    console.log(this.file);
+    this.photoService
+      .upload(description, allowComments, this.file)
+      .subscribe(() => this.router.navigate(['']));
   }
 
 }
