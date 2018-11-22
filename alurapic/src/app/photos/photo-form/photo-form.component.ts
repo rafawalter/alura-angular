@@ -13,6 +13,7 @@ export class PhotoFormComponent implements OnInit {
 
   photoForm: FormGroup;
   file: File;
+  preview: any;
 
   constructor(
     private formBuilder: FormBuilder,
