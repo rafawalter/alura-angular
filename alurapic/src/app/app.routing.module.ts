@@ -1,7 +1,7 @@
-import { SignUpComponent } from './home/signup/signup.component';
-import { AuthGuard } from './core/auth/auth.guard';
 import { Routes, RouterModule } from '@angular/router';
 import { NgModule } from '@angular/core';
+
+import { AuthGuard } from './core/auth/auth.guard';
 
 import { PhotoListComponent } from './photos/photo-list/photo-list.component';
 import { PhotoFormComponent } from './photos/photo-form/photo-form.component';
@@ -16,7 +16,7 @@ const routes: Routes = [
     },
     { path: 'home', loadChildren: './home/home.module#HomeModule' },
     { path: 'user/:userName', component: PhotoListComponent, resolve: { photos: PhotoListResolver } },
-    { path: 'p/add', component: PhotoFormComponent },
+    { path: 'p/add', component: PhotoFormComponent, canActivate: [AuthGuard] },
     { path: '**', component: NotFoundComponent }
 ];
 
