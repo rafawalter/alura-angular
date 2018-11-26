@@ -4,6 +4,7 @@ import { Component, OnInit } from '@angular/core';
 
 import { Photo } from '../photo/photo';
 import { PhotoService } from './../photo/photo.service';
+import { PhotoComment } from '../photo/photo-comment';
 
 @Component({
     templateUrl: './photo-details.component.html',
@@ -12,6 +13,7 @@ import { PhotoService } from './../photo/photo.service';
 export class PhotoDetailsComponent implements OnInit {
 
     photo$: Observable<Photo>;
+    comments$: Observable<PhotoComment[]>;
 
     constructor(
         private route: ActivatedRoute,
@@ -19,8 +21,9 @@ export class PhotoDetailsComponent implements OnInit {
     ) { }
 
     ngOnInit(): void {
-        const id = this.route.snapshot.params.photoId;
+        const photoId = this.route.snapshot.params.photoId;
         this.photo$ = this.photoService
-            .findById(id);
+            .findById(photoId);
+        this.comments$ = this.photoService.getComments(photoId);
     }
 }

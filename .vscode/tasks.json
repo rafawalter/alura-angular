@@ -10,6 +10,14 @@
             "problemMatcher": [
                 "$tslint5"
             ]
+        },
+        {
+            "type": "npm",
+            "script": "start",
+            "path": "api/",
+            "problemMatcher": [
+                "$tslint5"
+            ]
         }
     ]
 }
