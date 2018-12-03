@@ -39,9 +39,7 @@ export class PhotoService {
 
     getComments(photoId: number) {
 
-
         const url = API + '/photos/' + photoId + '/comments';
-        alert('getComments ' + url);
         return this.http.get<PhotoComment[]>(
             url
         );
