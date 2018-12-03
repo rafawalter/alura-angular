@@ -38,8 +38,20 @@ export class PhotoService {
     }
 
     getComments(photoId: number) {
+
+
+        const url = API + '/photos/' + photoId + '/comments';
+        alert('getComments ' + url);
         return this.http.get<PhotoComment[]>(
-            API + '/photos/' + photoId + '/comments'
+            url
+        );
+    }
+
+    addComment(photoId: number, commentText: string) {
+
+        return this.http.post(
+            API + '/photos/' + photoId + '/comments',
+            { commentText },
         );
     }
 }

@@ -9,13 +9,13 @@
         </li>
     </ul>
     <div class="mt-4">
-        <form [formGroup]="commentForm">
+        <form [formGroup]="commentForm" (submit)='save()'>
             <div class="input-group">
                 <textarea formControlName="comment" class="form-control"></textarea>
                 <div class="input-group-append">
                     <button [disabled]='commentForm.invalid' type='submit' class="btn btn-primary pull-left">
-                        Publish
-                    </button>
+                    Publish
+                </button>
                 </div>
             </div>
             <ap-vmessage text="Maximum size allowed is 300" *ngIf="commentForm.get('comment').errors?.maxlength"></ap-vmessage>
