@@ -1,6 +1,12 @@
 import { AlertService } from './alert.service';
 import { Alert, AlertType } from './alert';
-import { Input } from '@angular/core';
+import { Input, Component } from '@angular/core';
+
+@Component({
+    // tslint:disable-next-line:component-selector
+    selector: 'ap-alert',
+    templateUrl: 'alert.component.html'
+})
 export class AlertComponent {
 
     @Input() timeout = 3000;
