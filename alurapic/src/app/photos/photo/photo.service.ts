@@ -4,9 +4,9 @@ import { Injectable } from '@angular/core';
 import { Photo } from './photo';
 import { catchError, map } from 'rxjs/operators';
 import { of, throwError, Observable } from 'rxjs';
-import { BlockingProxy } from 'blocking-proxy';
+import { environment } from 'src/environments/environment';
 
-const API = 'http://localhost:3000';
+const API = environment.ApiUrl;
 
 @Injectable({ providedIn: 'root' })
 export class PhotoService {
