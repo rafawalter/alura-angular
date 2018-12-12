@@ -7,7 +7,8 @@ import { map } from 'rxjs/operators';
 @Component({
     // tslint:disable-next-line:component-selector
     selector: 'ap-loading',
-    templateUrl: './loading.component.html'
+    templateUrl: './loading.component.html',
+    styleUrls: ['loading.component.css'],
 })
 export class LoadingComponent implements OnInit {
     loading$: Observable<string>;
