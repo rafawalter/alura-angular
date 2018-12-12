@@ -20,11 +20,9 @@ export class PhotoListComponent implements OnInit {
   constructor(
     private activatedRoute: ActivatedRoute,
     private photoService: PhotoService,
-    private loadingService: LoadingService,
   ) { }
 
   ngOnInit(): void {
-    this.loadingService.start();
     this.activatedRoute.params.subscribe(params => {
       this.userName = this.activatedRoute.snapshot.params['userName'];
       this.photos = this.activatedRoute.snapshot.data['photos'];
