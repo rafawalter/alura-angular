@@ -1,3 +1,4 @@
+import { LoadingModule } from './../shared/components/loading/loading.module';
 import { AlertModule } from './../shared/components/alerts/alert.module';
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
@@ -21,6 +22,7 @@ import { HeaderComponent } from './header/header.component';
         CommonModule,
         RouterModule,
         AlertModule,
+        LoadingModule,
     ],
     providers: [{
         provide: HTTP_INTERCEPTORS,
