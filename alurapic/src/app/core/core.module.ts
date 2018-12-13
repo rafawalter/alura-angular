@@ -1,3 +1,4 @@
+import { MenuModule } from './../shared/components/menu/menu.module';
 import { LoadingModule } from './../shared/components/loading/loading.module';
 import { AlertModule } from './../shared/components/alerts/alert.module';
 import { CommonModule } from '@angular/common';
@@ -23,6 +24,7 @@ import { HeaderComponent } from './header/header.component';
         RouterModule,
         AlertModule,
         LoadingModule,
+        MenuModule,
     ],
     providers: [{
         provide: HTTP_INTERCEPTORS,
