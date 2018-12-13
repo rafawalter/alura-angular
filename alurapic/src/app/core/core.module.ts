@@ -1,3 +1,4 @@
+import { ShowIfLoggedModule } from './../shared/directives/show-if-logged/show-if-logged.module';
 import { MenuModule } from './../shared/components/menu/menu.module';
 import { LoadingModule } from './../shared/components/loading/loading.module';
 import { AlertModule } from './../shared/components/alerts/alert.module';
@@ -25,6 +26,7 @@ import { HeaderComponent } from './header/header.component';
         AlertModule,
         LoadingModule,
         MenuModule,
+        ShowIfLoggedModule,
     ],
     providers: [{
         provide: HTTP_INTERCEPTORS,
