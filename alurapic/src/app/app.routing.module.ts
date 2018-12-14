@@ -1,3 +1,4 @@
+import { GlobalErrorComponent } from './errors/global-error/global-error.component';
 import { Routes, RouterModule } from '@angular/router';
 import { NgModule } from '@angular/core';
 
@@ -20,6 +21,7 @@ const routes: Routes = [
     { path: 'p/add', component: PhotoFormComponent, canActivate: [AuthGuard], data: { title: 'Photo upload' } },
     { path: 'p/:photoId', component: PhotoDetailsComponent, data: { title: 'Photo detail' } },
     { path: 'not-found', component: NotFoundComponent, data: { title: 'Not found' } },
+    { path: 'error', component: GlobalErrorComponent, data: { title: 'Error' } },
     { path: '**', redirectTo: 'not-found' }
 ];
 
