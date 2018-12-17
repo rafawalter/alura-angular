@@ -6,6 +6,7 @@ import { UserNotTakenValidatorService } from './user-not-taken.validator.service
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { Component, OnInit, ElementRef, ViewChild } from '@angular/core';
 import { lowerCaseValidator } from 'src/app/shared/validators/lower-case.validator';
+import { userNamePassword } from './username-password.validator';
 
 @Component({
     templateUrl: './signup.component.html',
@@ -49,7 +50,9 @@ export class SignUpComponent implements OnInit {
                 Validators.minLength(8),
                 Validators.maxLength(14)
             ]],
-        });
+        }, {
+                validator: userNamePassword
+            });
 
         if (this.platformDetectorService.isPlatformBrowser()) {
             this.emailInput.nativeElement.focus();
